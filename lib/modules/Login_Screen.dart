@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../modules/Register_Screen.dart';
-import '../modules/Forgot_Screen.dart';
+import 'package:myapp/modules/Forgot_Screen.dart';
+import 'package:myapp/modules/Register_Screen.dart';
+import 'package:myapp/dashboard/Home.dart';
+import 'package:myapp/helpers/Constants.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -16,7 +19,7 @@ class _State extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('TradeHooks'),
+          title: Text(Constants.appBarText),
         ),
         body: Padding(
             padding: EdgeInsets.all(10),
@@ -73,6 +76,10 @@ class _State extends State<LoginPage> {
                       onPressed: () {
                         print(nameController.text);
                         print(passwordController.text);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
                       },
                     )),
                 Container(

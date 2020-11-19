@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/helpers/Constants.dart';
 
 class ForgotRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Forgot Route"),
+        title: Text(Constants.appBarText),
       ),
       body: Center(
         child: ElevatedButton(
