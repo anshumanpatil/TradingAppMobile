@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
           Constants.SwingTradeRoute: (context) => SwingTradeRoute(),
           Constants.DayTradeRoute: (context) => DayTradeRoute(),
      },
-
         );
   }
 }
