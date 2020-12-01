@@ -1,4 +1,5 @@
 class Constants {
-
-  static var appBarText = "TradeHooks";
+  static const String appBarText = "TradeHooks";
+  static const String SwingTradeRoute = "SwingTradeRoute";
+  static const String DayTradeRoute = "DayTradeRoute";
 }
