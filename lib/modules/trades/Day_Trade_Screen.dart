@@ -6,9 +6,13 @@ import 'package:myapp/dashboard/Trade_Card.dart';
 import 'package:myapp/dao/Trade_Data.dart';
 
 class DayTradeRoute extends StatelessWidget {
-  final tradeData = new TradeData (
-    title: "Anshuman"
+  final litems = List<TradeData>.generate(
+  10,
+  (i) => TradeData(
+    title: '$i' 
+  )
   );
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +25,17 @@ class DayTradeRoute extends StatelessWidget {
         appBar: AppBar(
           title: Text(Constants.appBarText),
         ),
-        body: TradeCard(tradeData),
+        body: new ListView.builder
+        (
+          itemCount: litems.length,
+          itemBuilder: (BuildContext ctxt, int index) {
+            return new TradeCard(litems[index]);
+          }
+        ),
       ),
     );
   }
 }
+
+
+
