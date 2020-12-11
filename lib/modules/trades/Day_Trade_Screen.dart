@@ -8,18 +8,16 @@ import 'package:myapp/dashboard/Navigation_Drawer.dart';
 import 'package:myapp/dashboard/Trade_Card.dart';
 import 'package:myapp/dao/Trade_Data.dart';
 
-
 Future<List<TradeData>> fetchPhotos(http.Client client) async {
-  final response = await client.get('https://jsonplaceholder.typicode.com/posts');
+  final response = await client.get('http://localhost:6598/users');
   return compute(parsePhotos, response.body);
 }
 
 List<TradeData> parsePhotos(String responseBody) {
   final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
-  
+
   return parsed.map<TradeData>((json) => TradeData.fromJson(json)).toList();
 }
-
 
 class DayTradeRoute extends StatelessWidget {
   @override
@@ -31,29 +29,27 @@ class DayTradeRoute extends StatelessWidget {
       drawer: NavigationDrawer(),
       body: Scaffold(
         appBar: AppBar(
-          title: Text(Constants.appBarText),
+          title: Text(Constants.appBarTextDay),
         ),
         body: FutureBuilder<List<TradeData>>(
-                future: fetchPhotos(http.Client()),
-                builder: (context, snapshot) {
-                  if (snapshot.hasError) {
-                    print("snapshot error");
-                    print("=====================================================================");
-                    print(snapshot.error);
-                    print("=====================================================================");
-                  }
-                    
-                  return ListView.builder        (
-                    itemCount: snapshot.data.length,
-                    itemBuilder: (BuildContext ctxt, int index) {
-                      return new TradeCard(snapshot.data[index]);
-                    }
-                  );
-                }),
-          ),
+            future: fetchPhotos(http.Client()),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                print("snapshot error");
+                print(
+                    "=====================================================================");
+                print(snapshot.error);
+                print(
+                    "=====================================================================");
+              }
+
+              return ListView.builder(
+                  itemCount: snapshot.data.length,
+                  itemBuilder: (BuildContext ctxt, int index) {
+                    return new TradeCard(snapshot.data[index]);
+                  });
+            }),
+      ),
     );
   }
 }
-
-
-

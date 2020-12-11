@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/dao/Trade_Data.dart';
+import 'package:myapp/helpers/HexTransformer.dart';
 
 class TradeCard extends StatelessWidget {
   final TradeData tradeData;
@@ -12,20 +13,19 @@ class TradeCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             ListTile(
-              leading: Icon(Icons.album),
+              leading: new IconTheme(
+                data: new IconThemeData(
+                    color: new Color(HexTransformer.getColor(tradeData.type))),
+                child: new Icon(HexTransformer.getIcon(tradeData.type)),
+              ),
               title: Text(tradeData.title),
-              subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+              subtitle: Text(tradeData.body),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 TextButton(
-                  child: const Text('BUY TICKETS'),
-                  onPressed: () {/* ... */},
-                ),
-                const SizedBox(width: 8),
-                TextButton(
-                  child: const Text('a'),
+                  child: const Text('Details'),
                   onPressed: () {/* ... */},
                 ),
                 const SizedBox(width: 8),

@@ -1,11 +1,13 @@
 class TradeData {
- String title;
- TradeData({this.title});
+  String title;
+  String type;
+  String body;
+  TradeData({this.title, this.type, this.body});
 
- factory TradeData.fromJson(Map<String, dynamic> json) {
+  factory TradeData.fromJson(Map<String, dynamic> json) {
     return TradeData(
-      title: json['title'] as String
-    );
+        title: json['title'] as String,
+        type: json['type'] as String,
+        body: json['body'] as String);
   }
-
 }
