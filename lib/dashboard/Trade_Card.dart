@@ -25,7 +25,7 @@ class TradeCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 TextButton(
-                  child: const Text('Details'),
+                  child: const Text('View Details'),
                   onPressed: () {/* ... */},
                 ),
                 const SizedBox(width: 8),

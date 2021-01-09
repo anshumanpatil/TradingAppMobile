@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(Constants.appBarText)),
-      body: Center(child: Text('My Page!')),
+      body: Center(child: Text('Get 20% off on Prime Membership!')),
       drawer: NavigationDrawer(),
     );
   }

@@ -4,6 +4,7 @@ class Constants {
   static const String SwingTradeRoute = "SwingTradeRoute";
   static const String DayTradeRoute = "DayTradeRoute";
   static const String SplashImagePath = "http://localhost/img/bull.png";
+  static const String TradeCallsPath = "http://localhost:6598/users";
   static const getData = [
     {
       'name': 'Bitcoin',

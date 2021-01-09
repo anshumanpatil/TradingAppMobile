@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "755400216012",
+    "project_id": "tradehooks-de1a3",
+    "storage_bucket": "tradehooks-de1a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755400216012:android:d11d7434b2a1a39f366169",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755400216012-e3dt3vsgh3qjrvtnrh1grmkcf4nu5hra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWA9Lhl6TT1xQQeiBTtVaazIgEq8W3hSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755400216012-e3dt3vsgh3qjrvtnrh1grmkcf4nu5hra.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
